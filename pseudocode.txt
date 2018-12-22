@@ -1,104 +1,45 @@
-1. Create a variable called ‘entries’ which equals the value of a empty array.
+// make a variable named entries with the value of an empty array. (Holds sequence of values for equation. ) Sequence of equation
 
- var entries = [];
+// make a variable named total with the value of ‘0’. (Total)
 
-2. Create a variable called total which equals the value of ‘0’.
+// make a variable named temp with the value of an empty string. (Entries of numbers and symbols )
 
-var total = 0;
+// make a Jquery click method, where if you click on the button element, it will select and return the value of the button.
+// make a if statement where there is a isNan function inside of it. 
+// If the value is a number then assign the temp to the value. 
+// temp equals temp + value.
+// make a Jquery where the value of the answer ID returns a substring of temp, where the first 9 numbers are extracted.
 
-3. Create another variable called ‘temp’ which equals to the value of an empty string.
+// If not, assign ‘AC’ to the value. 
+// add the AC symbol and it will clear the temp and all entries.
 
-4. The variable called ‘temp’ has a Jquery click where the selector is the button tag. Whenever you click the button element, then it will return the value of the temp variable.
-var temp = '';
-$("button").on('click', function() {
- 	var val = $(this).text();
+// If the ‘CE’ symbol is assigned to value, then temp will be cleared (most recent entry)
 
-5.  If your value is a number, then the value is tested and added to the temp variable. Callback first nine numbers will be extracted using substring in the temp string.
+// if not, assign the multiplication symbol to the value.
+// add the value to temp
+// add the multiplication symbol to temp.
+// add the multiplication symbol to our entries array.
 
-  if (!isNaN(val) || val === '.') {
-    temp += val;
-    $("#answer").val(temp.substring(0,10));
+// if not, assign the divided by symbol to value. 
+// add temp to our entries
+// add the divided by symbol to the entries array. 
 
-6. If the value is compared to AC, then callback the current symbol and clear temp.
-  } else if (val === 'AC') {
-    entries = [];
-    temp = '';
-    total = 0;
-    $("#answer").val('')
+// if not, assign equals to value.
+// add temp to our entries. 
+// make a variable named nt with the value of number and an argument which selects the first string or number in our entries array.
+//For variable i is 1, i is less than the length of the entries string
+// make variable nextNum which adds string in our entries array to the second.
+// make variable symbol which has a selects the current symbol in our entries array.
+// if symbol is a ‘+’ symbol, then the nt variable equals the first string in our entries array plus the next number or string in our array.
+// if the symbol is not a + symbol, then our symbol is assigned the - symbol. 
+// if the - symbol, then nt equals first string minus nextNum.
+// if the symbol is the multiplication ‘*’ symbol, then nt equals the first string in our array [0] to have nextNum multiplied with it.
+// if the symbol is not the previous symbol ‘*’, then the symbol is assigned to the / symbol.
+// If / is assign to symbol, then nt equals the first string in our entries array to be divided by the nextNum.
 
+// if nt is less than ‘0’, then nt equals the absolute number of nt plus the ‘-‘ (minus) symbol.
+(If the first number in the entries array is less than 0, than the minus symbol is added to it)
 
-7.  If the value is compared to CE, then entries is cleared.
-
-// Clear last entry  
-} else if (val === 'CE') {
-    temp = '';
-    $("#answer").val('')
-
-
-8.  If the value is compared to the multiply symbol, then add the multiplied symbol to the entries array.
-
- // Change multiply symbol to work with eval
-
-  } else if (val === 'x') {
-    entries.push(temp);
-    entries.push('*');
-    temp = '';
-
-9.  If the divide symbol is compared and equal to the value, then add the divide symbol to the entries array.
-
- // Change divide symbol to work with eval
-
-  } else if (val === '÷') {
-    entries.push(temp);
-    entries.push('/');
-    temp = '';
-
-10. If the value is compared to the = symbol, then add the symbol to the entries array. 
-11. For each variable which is equal to one, add the next number to each entry.
-12. If the symbol is compared and equal to the + symbol, add nt with the next number. 
-13. If the symbol is not the plus symbol and are the -, * or / symbol, then the nt variable and next number’s will follow according to that symbol.
-
- // Got the equals sign, perform calculation
-
-  } else if (val === '=') {
-  	entries.push(temp);
-
-    var nt = Number(entries[0]);
-    for (var i = 1; i < entries.length; i++) {
-      var nextNum = Number(entries[i+1])
-      var symbol = entries[i];
-     
-      if (symbol === '+') { nt += nextNum; } 
-      else if (symbol === '-') { nt -= nextNum; } 
-      else if (symbol === '*') { nt *= nextNum; } 
-      else if (symbol === '/') { nt /= nextNum; }
-      
-      i++;
-    }
-
-
-14. If the nt variable is less than ‘0’, then return the absolute value of nt + the minus symbol. 
-
-15. Callback the value of the variable nt.
-
-
-// Swap the '-' symbol so text input handles it correctly
-
-    if (nt < 0) {
-      nt = Math.abs(nt) + '-';
-    }
-    
-    $("#answer").val(nt);
-		entries = [];
-    temp = '';
-    
-
-16. If condition is false, then add value to entries array.
-
-  // Push number
-  } else {
-    entries.push(temp);
-    entries.push(val);
-    temp = '';
-  }
-});
+// otherwise add temp to our entries array
+// add number to our entries array. 
+// clear temp variable.
