@@ -1,8 +1,9 @@
 .calculator {
   width: 250px;
   height: 335px;
-  margin: 0 auto;
+  margin-top:-20%;
 }
+
 button {
   background-color: dimgrey; /* Green */
   border: none;
