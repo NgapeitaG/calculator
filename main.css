@@ -6,6 +6,7 @@
  border-color: black;
 	border-width: thick;
 	background-color: black;
+	justify-content: center;
 }
 
 button {
@@ -20,6 +21,7 @@ button {
   margin: 4px 2px;
   cursor: pointer;
   border-radius:12px;
+justify-content: center;
 }
 .row {
 	margin-left:6px;
