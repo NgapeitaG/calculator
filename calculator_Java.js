@@ -1,15 +1,16 @@
 // JavaScript Document
 // make a variable named entries with the value of an empty array. (Holds sequence of values for equation. ) Sequence of equation
-
+var entries = [];
 // make a variable named total with the value of ‘0’. (Total)
-
+var total = 0;
 // make a variable named temp with the value of an empty string. (Entries of numbers and symbols )
-
+var temp = '';
 // make a Jquery click method, where if you click on the button element, it will select and return the value of the button.
 // make a if statement where there is a isNan function inside of it. 
 // If the value is a number then assign the temp to the value. 
 // temp equals temp + value.
 // make a Jquery where the value of the answer ID returns a substring of temp, where the first 9 numbers are extracted.
+$("button")
 
 // If not, assign ‘AC’ to the value. 
 // add the AC symbol and it will clear the temp and all entries.
