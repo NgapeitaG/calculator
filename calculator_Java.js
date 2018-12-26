@@ -1,47 +1,108 @@
 // JavaScript Document
-// make a variable named entries with the value of an empty array. (Holds sequence of values for equation. ) Sequence of equation
-var entries = [];
-// make a variable named total with the value of ‘0’. (Total)
-var total = 0;
-// make a variable named temp with the value of an empty string. (Entries of numbers and symbols )
-var temp = '';
-// make a Jquery click method, where if you click on the button element, it will select and return the value of the button.
-// make a if statement where there is a isNan function inside of it. 
-// If the value is a number then assign the temp to the value. 
-// temp equals temp + value.
-// make a Jquery where the value of the answer ID returns a substring of temp, where the first 9 numbers are extracted.
-$("button")
+const calculator = {
+  displayValue: '0',
+  firstOperand: null,
+  waitingForSecondOperand: false,
+  operator: null,
+};
 
-// If not, assign ‘AC’ to the value. 
-// add the AC symbol and it will clear the temp and all entries.
+//updates the disabled form that is the display, displayValue keeps at as 0
+function updateDisplay() {
+  const display = document.querySelector('.calc-scn'); //looks for class calc-scn(the disabled form)
+  display.value = calculator.displayValue;
+  }
+  
+  updateDisplay();
+  
+const keys = document.querySelector('.grid-container'); //looks for grid-container and its children
+keys.addEventListener('click', (event) => {
+const { target } = event;
+if (!target.matches('button')) {
+  return;
+}
 
-// If the ‘CE’ symbol is assigned to value, then temp will be cleared (most recent entry)
+if (target.classList.contains('operator')) {
+  handleOperator(target.value);
+      updateDisplay();
+  return;
+}
 
-// if not, assign the multiplication symbol to the value.
-// add the value to temp
-// add the multiplication symbol to temp.
-// add the multiplication symbol to our entries array.
+if (target.classList.contains('decimal')) {
+  inputDecimal(target.value);
+      updateDisplay();
+  return;
+}
 
-// if not, assign the divided by symbol to value. 
-// add temp to our entries
-// add the divided by symbol to the entries array. 
+if (target.classList.contains('all-clear')) {
+  resetCalc();
+      updateDisplay();
+  return;
+}
 
-// if not, assign equals to value.
-// add temp to our entries. 
-// make a variable named nt with the value of number and an argument which selects the first string or number in our entries array.
-//For variable i is 1, i is less than the length of the entries string
-// make variable nextNum which adds string in our entries array to the second.
-// make variable symbol which has a selects the current symbol in our entries array.
-// if symbol is a ‘+’ symbol, then the nt variable equals the first string in our entries array plus the next number or string in our array.
-// if the symbol is not a + symbol, then our symbol is assigned the - symbol. 
-// if the - symbol, then nt equals first string minus nextNum.
-// if the symbol is the multiplication ‘*’ symbol, then nt equals the first string in our array [0] to have nextNum multiplied with it.
-// if the symbol is not the previous symbol ‘*’, then the symbol is assigned to the / symbol.
-// If / is assign to symbol, then nt equals the first string in our entries array to be divided by the nextNum.
+entDig(target.value);
+updateDisplay();
+});
 
-// if nt is less than ‘0’, then nt equals the absolute number of nt plus the ‘-‘ (minus) symbol.
-//(If the first number in the entries array is less than 0, than the minus symbol is added to it)
+function entDig(digit) {
+  const { displayValue, waitingForSecondOperand } = calculator;
 
-// otherwise add temp to our entries array
-// add number to our entries array. 
-// clear temp variable.
+  if (waitingForSecondOperand === true) {
+    calculator.displayValue = digit;
+    calculator.waitingForSecondOperand = false;
+  } else {
+    calculator.displayValue = displayValue === '0' ? digit : displayValue + digit;
+  }
+
+  console.log(calculator);
+}
+
+function inputDecimal(dot) {
+  // If the `displayValue` does not contain a decimal point
+  if (!calculator.displayValue.includes(dot)) {
+    // Append the decimal point
+    calculator.displayValue += dot;
+  }
+}
+
+//looks for opereator key press then stores first number in firstoperand and operator then waits for seocnd number
+function handleOperator(nextOperator) {
+const { firstOperand, displayValue, operator } = calculator
+const inputValue = parseFloat(displayValue);
+
+if (firstOperand == null) {
+  calculator.firstOperand = inputValue;
+} else if (operator) {
+  const result = equals [operator](firstOperand, inputValue); //calls function equals below
+
+  calculator.displayValue = String(result);
+  calculator.firstOperand = result;
+}
+
+calculator.waitingForSecondOperand = true;
+calculator.operator = nextOperator;
+console.log(calculator);
+}
+
+//looks for operator passed through, works like if/else until it finds the correct opertator, then
+//performs function
+const equals = {
+  '/': (firstOperand, secondOperand) => firstOperand / secondOperand,
+
+  '*': (firstOperand, secondOperand) => firstOperand * secondOperand,
+
+  '+': (firstOperand, secondOperand) => firstOperand + secondOperand,
+
+  '-': (firstOperand, secondOperand) => firstOperand - secondOperand,
+//'%':
+
+  '=': (firstOperand, secondOperand) => secondOperand
+};
+
+//resets calculator obj to defaults  
+function resetCalc() {
+  calculator.displayValue = '0';
+  calculator.firstOperand = null;
+  calculator.waitingForSecondOperand = false;
+  calculator.operator = null;
+  console.log(calculator);
+}
