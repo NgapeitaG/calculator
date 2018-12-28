@@ -1,0 +1,100 @@
+@charset "UTF-8";
+/* CSS Document */
+body, html {
+  width: 100%;
+  background-color:black;
+  background-attachment: fixed;
+}
+
+.calculator {
+  width: 300px;
+  height: 450px;
+  background-color:lightsteelblue;
+	border:thick;
+	border-width:8px;
+	border-color:darkslategrey;
+	box-shadow: 3px 10px 56px 8px black;
+	 border-radius:16px;
+}
+button {
+  background-color: whitesmoke;
+  color: black;
+  padding: 20px;
+  font-size: 26px;
+margin:8px;
+	margin-left:8px;
+  cursor:pointer;
+	margin-top:10px;
+	border-style:outset;
+	border-width:2px;
+	border-radius:15px;
+		box-shadow: 1px 1px 12px 1px black;
+	width:3em;
+}
+h1{
+	text-align:center;
+	color:lightsteelblue;
+}
+h4{
+	text-align:center;
+	font-size:24px;
+	color:antiquewhite;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+#fullScreenDiv{
+    width:100%;
+    min-height: 100%; 
+   /* Set the height to match that of the viewport. */
+    height: 100vh;
+    width: auto;
+    padding:0!important;
+    margin: 0!important;
+    background-color: gray;
+    position: relative;
+}
+#video{    
+    width: 100vw; 
+    height: auto;
+    object-fit: cover;
+    left: 0px;
+    top: 0px;
+    z-index: 1;
+}
+
+@media (min-aspect-ratio: 16/9) {
+  #video{
+    height: 150%;
+    top: -100%;
+  }
+  #videosubstitute{
+    display:block;
+    width: 100%;
+    height: auto;}
+}
+
+@media (max-aspect-ratio: 16/9) {
+  #video {
+    width: 150%;
+    left: -100%;
+  }
+  #videosubstitute{display:block;width:auto;height:100%;}
+}
+/*if there is 992  pixels or more, then display the video but hide the image*/
+@media only screen and (min-width : 992px) {
+#video{display:block;}
+#videosubstitute{display:none}
+}   
+
+/* The container for our text and stuff */
+#messageBox{
+    position: absolute;  top: 0;  left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height:100%;
+}
