@@ -2,7 +2,7 @@
 /* CSS Document */
 body, html {
   width: 100%;
-  background-color:aliceblue;
+  background-color:lightskyblue;
 }
 
 .calculator {
@@ -32,7 +32,9 @@ margin:8px;
 }
 h1{
 	text-align:center;
+	color:lightsteelblue;
 }
 h4{
 	text-align:center;
+	font-size:14px;
 }
