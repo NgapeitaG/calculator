@@ -4,7 +4,7 @@
 <title>My Calculator</title>	
 </head>
 <body bgcolor="aliceblue">
-<center><!-- #BeginDate format:fcAm1m -->Friday, December 28, 2018  22:06<!-- #EndDate --></center>
+<center><!-- #BeginDate format:fcAm1m -->Friday, December 28, 2018  22:10<!-- #EndDate --></center>
 <center><br>
 <h1><b><font color="lightblue" style= "Font-size:70">Relax and calculate!</font></b></h1>
 <div style = "width:261px"; background:"FFF8DC">
@@ -42,7 +42,36 @@ function btnplus()
 	document.Calculator.display.value +="+";
 	document.Calculator.display.style.textAlign="right";
 }
-	
+function btnsub()
+{
+	document.Calculator.display.value +="-";
+	document.Calculator.display.style.textAlign="right";
+}
+function btnmult()
+{
+	document.Calculator.display.value +="*";
+	document.Calculator.display.style.textAlign="right";
+}
+function btnMod()
+{
+	document.Calculator.display.value +="%";
+	document.Calculator.display.style.textAlign="right";
+}
+function btndot()
+{
+	document.Calculator.display.value +=".";
+	document.Calculator.display.style.textAlign="right";
+}
+function btndiv()
+{
+	document.Calculator.display.value +="/";
+	document.Calculator.display.style.textAlign="right";
+}
+function btnclear()
+{
+	document.Calculator.display.value +="";
+	document.Calculator.display.style.textAlign="right";
+}
 </script>
 <br>
 </center><br>
