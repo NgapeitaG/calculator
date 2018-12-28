@@ -83,6 +83,19 @@ function btnclear()
 	document.Calculator.display.value ="";
 	document.Calculator.display.style.textAlign="right";
 }
+
+var video = document.getElementById("myVideo");
+var btn = document.getElementById("myBtn");
+
+function myFunction() {
+  if (video.paused) {
+    video.play();
+    btn.innerHTML = "Pause";
+  } else {
+    video.pause();
+    btn.innerHTML = "Play";
+  }
+}
 </script>
 <br><br>
 <center>
