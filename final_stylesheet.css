@@ -2,7 +2,8 @@
 /* CSS Document */
 body, html {
   width: 100%;
-  background-color:lightskyblue;
+  background-color:black;
+  background-attachment: fixed;
 }
 
 .calculator {
@@ -50,7 +51,7 @@ body {
 }
 
 #myVideo {
-  position:absolute;
+  position:fixed;
   right: 0;
   bottom: 0;
   min-width: 100%; 
