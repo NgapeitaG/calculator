@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>My Calculator</title>	
+<link href="final_stylesheet.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<center><!-- #BeginDate format:fcAm1m --><font color="antiquewhite" style= "Font-size:12">Friday, December 28, 2018  22:59<!-- #EndDate --></font></center><br>
+<center>
+<h4>Relax and calculate!</h4>
+</center>
+<div id="fullScreenDiv">
+<div id="videoDiv">           
+            <video preload="preload" id="video" autoplay="autoplay" loop="loop">
+            <source src="Video/Falling night rain.mp4" type="video/mp4"></source>
+            </video> 
+	
+</div>
+<center>
+<div style = "width:300px"; background:"FFF8DC">
+        <div id="messageBox"> 
+<div class="calculator">
+<form name ="Calculator">
+<br>
+<input name ="display" placeholder = "0" style ="width:254px; height:60px; text-align:right; font-size:80; border-radius:8px; margin:auto" size="0"/>
+<br><br>
+<input type="button" value="7" onClick="document.Calculator.display.value +='7'" style ="width:60px; height:60px; font-size:30; padding:20; border-radius:8px; margin:3px"/>
+<input type="button" value="8" onClick="document.Calculator.display.value +='8'" style ="width:60px; height:60px; font-size:30; padding:20; border-radius:8px"/>
+<input type="button" value="9" onClick="document.Calculator.display.value +='9'" style ="width:60px; height:60px; font-size:30; padding:20; border-radius:8px"/>
+<input type="button" value="+" onClick="btnplus()" style ="width:60px; height:60px; font-size:30; padding:20; border-radius:8px"/>
+<br>
+<input type="button" value="4" onClick="document.Calculator.display.value +='4'" style ="width:60px; height:60px; font-size:30; padding:20; border-radius:8px; margin:3px"/>
+<input type="button" value="5" onClick="document.Calculator.display.value +='5'" style ="width:60px; height:60px; font-size:30; padding:20; border-radius:8px"/>
+<input type="button" value="6" onClick="document.Calculator.display.value +='6'" style ="width:60px; height:60px; font-size:30; padding:20; border-radius:8px"/>
+<input type="button" value="-" onClick="btnsub()" style ="width:60px; height:60px; font-size:30; padding:20; border-radius:8px"/>
+<br>
+<input type="button" value="1" onClick="document.Calculator.display.value +='1'" style ="width:60px; height:60px; font-size:30; padding:20; border-radius:8px; margin:3px"/>
+<input type="button" value="2" onClick="document.Calculator.display.value +='2'" style ="width:60px; height:60px; font-size:30; padding:20; border-radius:8px"/>
+<input type="button" value="3" onClick="document.Calculator.display.value +='3'" style ="width:60px; height:60px; font-size:30; padding:20; border-radius:8px"/>
+<input type="button" value="*" onClick="btnmult()" style ="width:60px; height:60px; font-size:30; padding:20; border-radius:8px"/>
+<br>
+<input type="button" value="0" onClick="document.Calculator.display.value +='0'" style ="width:60px; height:60px; font-size:30; padding:20; border-radius:8px; margin:3px"/>
+<input type="button" value="%" onClick="btnMod()" style ="width:60px; height:60px; font-size:30; padding:20; border-radius:8px"/>
+<input type="button" value="." onClick="btndot()" style ="width:60px; height:60px; font-size:30; padding:20; border-radius:8px"/>
+<input type="button" value="/" onClick="btndiv()" style ="width:60px; height:60px; font-size:30; padding:20; border-radius:8px"/>
+<br>
+<input type="button" value="Clear" onClick="btnclear()" style ="width:124px; height:60px; font-size:30; padding:20; border-radius:8px"/>
+<input type="button" value="=" onClick="document.Calculator.display.value = eval(document.Calculator.display.value)" style ="width:124px; padding:20; height:60px; font-size:30; padding:20; border-radius:8px; margin:3px"/>
+</form>
+</div>
+</div>
+</center>
+<script>
+function btnplus()
+{
+	document.Calculator.display.value +="+";
+	document.Calculator.display.style.textAlign="right";
+}
+function btnsub()
+{
+	document.Calculator.display.value +="-";
+	document.Calculator.display.style.textAlign="right";
+}
+function btnmult()
+{
+	document.Calculator.display.value +="*";
+	document.Calculator.display.style.textAlign="right";
+}
+function btnMod()
+{
+	document.Calculator.display.value +="%";
+	document.Calculator.display.style.textAlign="right";
+}
+function btndot()
+{
+	document.Calculator.display.value +=".";
+	document.Calculator.display.style.textAlign="right";
+}
+function btndiv()
+{
+	document.Calculator.display.value +="/";
+	document.Calculator.display.style.textAlign="right";
+}
+function btnclear()
+{
+	document.Calculator.display.value ="";
+	document.Calculator.display.style.textAlign="right";
+}
+
+var video = document.getElementById("myVideo");
+var btn = document.getElementById("myBtn");
+
+function myFunction() {
+  if (video.paused) {
+    video.play();
+    btn.innerHTML = "Pause";
+  } else {
+    video.pause();
+    btn.innerHTML = "Play";
+  }
+}
+</script>
+<br><br>
+<center>
+  &nbsp;<audio controls="controls" autoplay="autoplay" loop="loop" >
+    <source src="Sounds/30 MINUTES of Gentle Rain at Night - Sleep,Insomnia,Relaxation,Meditation,Zen,Yoga,Study (320  kbps).mp3" type="audio/mp3">
+  </audio>
+</center>
+<br>
+</body>
+</html>
